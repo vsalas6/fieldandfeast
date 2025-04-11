@@ -174,6 +174,22 @@ figure p{
   padding-bottom: 10px;
 }
 
+#gallery > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#gallery > div > figure {
+  width: 100%;
+  text-align: center;
+}
+
+#gallery > div > figure img {
+  width: 100%;
+  height: auto;
+}
+
 #gallery a{
   display: flex;
   justify-content: center;
@@ -220,84 +236,14 @@ footer a:nth-of-type(1), footer a:nth-of-type(2){
 
 /* ------ MEDIA QUERY (medium) ------ */
 @media (min-width: 600px){
-  body{
-    font-family: var(--font-main);
+
+  #gallery > div > figure {
+    width: 48%;
   }
-  
-  h1{
-    font-weight: bold;
-    font-size: 80px;
-  }
-  
-  p{
-    font-size: 18px;
-    line-height: 1.6;
-    padding-bottom: 15px;
-  }
-  
-  hr{
-    background-color: var(--chmp-gold);
-    height: 2px;
-    border: none;
-  }
-  
-  header{
-    background-color: var(--mdn-blue);
-    color: var(--sft-white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  header nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 15px;
-  }
-  
-  header p{
-    font-style: italic;
-    font-size: 25px;
-    padding: 30px 20px;
-  }
-  
-  nav{
-    background-color: var(--chmp-gold);
-    color: var(--mdn-blue);
-    font-weight: bold;
-    font-size: 25px;
-    width: 100%;
-  }
-  
-  body{
-    background-color: var(--sft-white);
-  }
-  
-  main{
-    padding: 60px 40px 20px;
-  }
-  
-  h2{
-    font-size: 30px;
-    padding-bottom: 15px;
-    padding-top: 40px;
-  }
-  
-  h3{
-    font-size: 30px;
-    padding: 25px 10px 10px;
-    font-weight: bold;
-  }
-  
+
   .offering-box{
-    background-color: var(--olive-green);
-    color: var(--sft-white);
-    margin-top: 20px;
     margin-bottom: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     flex: 1 1 48%;
   }
 
@@ -318,88 +264,32 @@ footer a:nth-of-type(1), footer a:nth-of-type(2){
     margin-right: 25px;
   }
   
-  .offering-box p{
-    padding: 0 10px 10px;
-  }
-  
-  .offering-box ul{
-    padding: 0 25px;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  figure{
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 7px 6px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    margin-right: 20px;
-    flex: 1 1 48%;
-  }
-  
-  figure img{
-    width: 100%;
-  }
-  
   figure p{
-    display: flex;
-    justify-content: center;
-    font-style: italic;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  
-  #gallery a{
-    display: flex;
-    justify-content: center;
-    background-color: var(--olive-green);
-    text-decoration: none;
-    color: var(--sft-white);
-    border-radius: 5px;
-    font-weight: bold;
-    padding: 20px;
-    margin-bottom: 40px;
-  }
-  
-  footer{
-    background-color: var(--mdn-blue);
-    color: var(--sft-white);
+    padding-bottom: 5px;
     text-align: center;
-    padding: 90px 0 30px;
-    margin-top: 10px;
-  }
-  
-  footer p{
-    margin-top: -15px;
-  }
-  
-  footer p:nth-of-type(3){
-    font-weight: bold;
-    color: var(--chmp-gold);
-    margin-bottom: 30px;
-  }
-  
-  footer a{
-    color: var(--chmp-gold);
-    text-decoration: none;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    font-size: 18px;
-  }
-  
-  footer a:nth-of-type(1), footer a:nth-of-type(2){
-    display: inline-block;
-    margin-right: 10px;
   }
 }
 
 /* ------ MEDIA QUERY (large) ------ */
 @media (min-width: 900px){
+  #gallery > div > figure:nth-child(-n+3) {
+    width: 30%;
+  }
 
+  #gallery > div > figure:nth-child(n+4) {
+    width: 30%;
+    padding-bottom: 10px;
+  }
 }
 
 /* ------ MEDIA QUERY (xl) ------ */
 @media (min-width: 1200px){
+  #gallery > div{
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 
+  #gallery > div > figure{
+    width: 18%;
+  }
 }
